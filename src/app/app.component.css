@@ -1,0 +1,21 @@
+.mar-top20 {
+  margin-top: 20px;
+}
+.width100 {
+  width: 100%
+}
+.width50 {
+  width: 50%
+}
+.toDoList {
+  list-style: none;
+  padding: 0px;
+}
+.toDoList li {
+  margin-bottom: 15px;
+}
+.toDoList li span {
+  display: block;
+  padding: 20px 15px;
+  background: #f7f7f7;
+}

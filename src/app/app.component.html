@@ -1,0 +1,40 @@
+<div class="page mar-top20">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <input [(ngModel)]="newTask" class="form-control text-center">
+        <button (click)="addTask()" class="btn btn-success width100">Add new task</button>
+      </div>
+    </div>
+    <div class="row mar-top20">
+        <div class="col-sm-12 col-md-6">
+          <h4>Todo list:</h4>
+          <ng-container *ngIf="tasksToDo.length > 0; else noTasksToDo">
+            <ul class="toDoList">
+              <li *ngFor='let task of tasksToDo'>
+                <span class="width100">{{task.name}}</span>
+                <button (click)="complete(task)" class="btn btn-info width50">Complete!</button>
+                <button (click)="delete(task)" class="btn btn-danger width50">Delete</button>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-template #noTasksToDo>
+            <h5>You have free time now!</h5>
+          </ng-template>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <h4>Complete tasks:</h4>
+            <ng-container *ngIf="tasksComplete.length > 0; else noTasksComplete">
+              <ul class="toDoList">
+                <li *ngFor='let task of tasksComplete'>
+                  <span class="width100">{{task.name}}</span>
+                </li>
+              </ul>
+            </ng-container>
+            <ng-template #noTasksComplete>
+              <h5>You didn't finish any task yet</h5>
+            </ng-template>
+          </div>
+      </div>
+  </div>
+</div>
